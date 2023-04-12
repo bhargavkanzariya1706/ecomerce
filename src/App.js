@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useMemo } from 'react';
+import React, { useEffect, useState} from 'react';
 import { Provider } from 'react-redux';
 import Header from './Components/Header';
 import Home from './pages/Home';
