@@ -40,7 +40,7 @@ export default function Header() {
             <Link to='/'><h3>Electric Product</h3></Link>
               <Link to='/Airdopes' >Airdopes</Link><br />
               <Link to='/TV' >TV</Link><br/>
-              <Link to='/Mobaile'>Mobaile</Link>
+              <Link to='/Mobile'>Mobile</Link>
 
               
               <Link to='/Login'>Login<AccountCircleSharpIcon /></Link>

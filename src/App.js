@@ -1,25 +1,23 @@
 import React, { useEffect, useState} from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Header from './Components/Header';
 import Home from './pages/Home';
 import Footer from './Components/Footer';
 import store from './store/store';
-import './index.scss';
 import Cart from './Components/Cart';
 import Wishlist from './Components/Wishlist';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Airdopes from './Components/Airdopes';
 import TV from './Components/TV';
-import Mobaile from './Components/Mobaile';
+import Mobile from './Components/Mobile';
 
 import Login from "./firebase/Login";
 import Home1 from "./firebase/Home1";
 import Signup from "./firebase/Signup";
 import { auth } from './firebase/firebase';
+import './index.scss';
 import "./App.css";
  
-
-
 
 export default function App() {
   const [userName, setUserName] = useState("");
@@ -49,7 +47,7 @@ export default function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/Airdopes' element={<Airdopes />} />
                   <Route path='/TV' element={<TV />} />
-                  <Route path='/Mobaile' element={<Mobaile />} />
+                  <Route path='/Mobile' element={<Mobile />} />
 
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />

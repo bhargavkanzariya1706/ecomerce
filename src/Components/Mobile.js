@@ -2,13 +2,13 @@ import React,{useState,useEffect} from 'react';
 import axios  from 'axios';
 import ProductsCard from './ProductsCard';
 
-const Mobaile = () => {
+const Mobile = () => {
     const [mob, setmob] = useState([]);
     const [ld, setld] = useState(false);
 
     const show = async()=>{
       setld(true);
-        await axios.get(`https://63be78edf5cfc0949b58277e.mockapi.io/api1/?catgory=Mobaile`)
+        await axios.get(`https://63be78edf5cfc0949b58277e.mockapi.io/api1/?catgory=Mobile`)
         .then((response)=>{
             setmob(response.data);
             setld(false);
@@ -37,4 +37,4 @@ const Mobaile = () => {
   );
 }
 
-export default Mobaile;
+export default Mobile;
