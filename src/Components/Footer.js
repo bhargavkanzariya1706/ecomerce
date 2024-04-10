@@ -6,7 +6,6 @@ export default function Footer() {
        <footer id = "footer">
            <div className="container">
                <h1>Electric Product</h1>
-               
                <p>
                 Built by | &nbsp; Bhargav Kanzariya
                </p>

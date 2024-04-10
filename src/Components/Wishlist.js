@@ -1,11 +1,12 @@
-import React,{useEffect}from "react";
-import {  useSelector,useDispatch} from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { togglewishList, removeItem } from "../store/slices/wishlistSlice";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const Wishlist = () => {
- 
-    const { isWishListOpen, wishListItems } = useSelector((state) => state.wishlist);
+  const { isWishListOpen, wishListItems } = useSelector(
+    (state) => state.wishlist
+  );
 
   const dispatch = useDispatch();
 
@@ -19,22 +20,21 @@ const Wishlist = () => {
 
   useEffect(() => {
     const docBody = document.body;
-    isWishListOpen ?
-      (docBody.classList.add("overflow_hide"))
-      : (docBody.classList.remove("overflow_hide"));
+    isWishListOpen
+      ? docBody.classList.add("overflow_hide")
+      : docBody.classList.remove("overflow_hide");
   }, [isWishListOpen]);
 
   const cartQuantity = wishListItems.length;
 
   return (
     <>
-      {
-      isWishListOpen && (
+      {isWishListOpen && (
         <div id="cart">
           <div className="cart_content">
             <div className="cart_head">
               <h2>
-              Wishlist <small>({cartQuantity})</small>
+                Wishlist <small>({cartQuantity})</small>
               </h2>
               <div
                 title="Close"
@@ -46,25 +46,27 @@ const Wishlist = () => {
             </div>
 
             <div className="cart_body">
-              {
-              cartQuantity === 0 ? (
+              {cartQuantity === 0 ? (
+                <div>
+                  <FavoriteBorderIcon
+                    sx={{
+                      width: "100px",
+                      borderRadius: "50%",
+                      border: "3px solid black",
+                      margin: "auto",
+                      display: "block",
+                      height: "100px",
+                      padding: "7px 10px 7px 10px",
+                      marginTop: "90px",
+                      backgroundColor: "red",
+                      borderColor: "darkblack",
+                      color: "white",
+                    }}
+                  />
 
-                <div> 
-                  <FavoriteBorderIcon 
-                  sx={{
-                    width:'100px',
-                  borderRadius:"50%",
-                  border:'3px solid black',
-                  margin:'auto',
-                  display:'block',
-                  height:"100px",
-                  padding:"7px 10px 7px 10px",
-                  marginTop:"90px",
-                  backgroundColor:'red',
-                  borderColor:'darkblack',
-                  color:"white"}} />     
-                    
-                  <h2 style={{ textAlign: "center" }}>Your Wishlist Is Empty</h2>
+                  <h2 style={{ textAlign: "center" }}>
+                    Your Wishlist Is Empty
+                  </h2>
                 </div>
               ) : (
                 wishListItems.map((item) => {
@@ -85,7 +87,8 @@ const Wishlist = () => {
                       <div
                         title="Remove from wishlist"
                         className="cart_items_delete"
-                        onClick={() => handleRemove(id)}>
+                        onClick={() => handleRemove(id)}
+                      >
                         <span>&times;</span>
                       </div>
                     </div>
